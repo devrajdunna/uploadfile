@@ -1,0 +1,504 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+Migrating to CreateMyclicks (20190618114724)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "myclicks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "attachment" varchar, "type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190618114724_create_myclicks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190618114724"]]
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-18 11:47:38.573784"], ["updated_at", "2019-06-18 11:47:38.573784"]]
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-06-18 18:02:03 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined method `save' for nil:NilClass):
+  
+app/controllers/myclicks_controller.rb:14:in `<class:MyclicksController>'
+app/controllers/myclicks_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-06-18 18:23:35 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.2ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /home/mallesh/click/app/assets/config
+  /home/mallesh/click/app/assets/images
+  /home/mallesh/click/app/assets/javascripts
+  /home/mallesh/click/app/assets/stylesheets
+  /home/mallesh/.rvm/gems/ruby-2.2.5/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/mallesh/.rvm/gems/ruby-2.2.5/gems/actioncable-5.2.3/lib/assets/compiled
+  /home/mallesh/.rvm/gems/ruby-2.2.5/gems/activestorage-5.2.3/app/assets/javascripts
+  /home/mallesh/.rvm/gems/ruby-2.2.5/gems/actionview-5.2.3/lib/assets/compiled
+  /home/mallesh/.rvm/gems/ruby-2.2.5/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/mallesh/click/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/myclicks.scss:4
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___4373911071844868349_47318903062080'
+Started GET "/" for 127.0.0.1 at 2019-06-18 18:24:09 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 372ms (Views: 370.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:24:13 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 31ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 18:24:46 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6BrTSroxDhnu16eid/srNNFQGA4L9w0OfTW7ubxppnIIpVqPBzNvpa6WESXttfWf0MWN34QsUKUui6bkOxUIvg==", "myclick"=>{"name"=>"First Image", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a6698a338 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-2f8v35.jpg>, @original_filename="raju.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"raju.jpg\"\r\nContent-Type: image/jpeg\r\n">, "type"=>"walpaper"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'walpaper'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:11:in `create'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:29:06 +0530
+  
+ActionController::RoutingError (undefined method `save' for nil:NilClass):
+  
+app/controllers/myclicks_controller.rb:10:in `<class:MyclicksController>'
+app/controllers/myclicks_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-06-18 18:36:50 +0530
+  
+ActionController::RoutingError (undefined method `save' for nil:NilClass):
+  
+app/controllers/myclicks_controller.rb:10:in `<class:MyclicksController>'
+app/controllers/myclicks_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2019-06-18 18:43:00 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:43:05 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 18:43:48 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IudYr59HVVBflktf1yL1t4FsE7LUN1Vw+PqGPWpFo8HCWNFqIkU07B/X/dhNbCscgPmGY1vsCNurRJtg7TkNDQ==", "myclick"=>{"name"=>"My file", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a668cf920 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-aji9z7>, @original_filename="install-setup", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"install-setup\"\r\nContent-Type: application/octet-stream\r\n">, "type"=>"env_setup"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'env_setup'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:12:in `create'
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 18:50:27 +0530
+  
+ActionController::RoutingError (undefined method `save' for nil:NilClass):
+  
+app/controllers/myclicks_controller.rb:13:in `<class:MyclicksController>'
+app/controllers/myclicks_controller.rb:1:in `<top (required)>'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:50:31 +0530
+  
+ActionController::RoutingError (undefined method `save' for nil:NilClass):
+  
+app/controllers/myclicks_controller.rb:13:in `<class:MyclicksController>'
+app/controllers/myclicks_controller.rb:1:in `<top (required)>'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:52:43 +0530
+  
+SyntaxError (/home/mallesh/click/app/controllers/myclicks_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/myclicks_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:53:35 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (3 for 0..2)):
+    16:       <%= f.file_field :attachment %>
+    17:       <%= f.label :type %>
+    18:       <%= f.text_field :type %>
+    19:       <%= f.submit "Save",new_myclick_path, class: "btn btn-primary" %>
+    20:    <% end %>
+    21: </div>
+  
+app/views/myclicks/new.html.erb:19:in `block in _app_views_myclicks_new_html_erb___4526406455641791659_69841070802340'
+app/views/myclicks/new.html.erb:12:in `_app_views_myclicks_new_html_erb___4526406455641791659_69841070802340'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:55:38 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (77.7ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `myclick_new_path' for #<#<Class:0x007f0a486e8288>:0x007f0a600ef350>):
+    16:       <%= f.file_field :attachment %>
+    17:       <%= f.label :type %>
+    18:       <%= f.text_field :type %>
+    19:       <%= f.submit "Save",myclick_new_path, class: "btn btn-primary" %>
+    20:    <% end %>
+    21: </div>
+  
+app/views/myclicks/new.html.erb:19:in `block in _app_views_myclicks_new_html_erb___4526406455641791659_69841268997800'
+app/views/myclicks/new.html.erb:12:in `_app_views_myclicks_new_html_erb___4526406455641791659_69841268997800'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:55:51 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mallesh/click/app/views/myclicks/new.html.erb:19: syntax error, unexpected keyword_class, expecting ')'
+....append=( f.submit "Save" class: "btn btn-primary" );@output...
+...                               ^):
+  
+app/views/myclicks/new.html.erb:19: syntax error, unexpected keyword_class, expecting ')'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 18:55:59 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 18:56:31 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"imgHOasGeFRaRF50rqnKGChAy+RYn5gcT4dxmQ6B5MONJ6hu2CBlkV1PtqmrOuexCgl8EkMNfLqkfwIV9WEzsw==", "myclick"=>{"name"=>"My project setup", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a65c049e8 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-eih8ri>, @original_filename="env_run", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"env_run\"\r\nContent-Type: application/octet-stream\r\n">, "type"=>"Set up"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'Set up'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 19:10:13 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in="anonymous">": expected "{", was ""):
+    14:     <%= csrf_meta_tags %>
+    15:     <%= csp_meta_tag %>
+    16: 
+    17:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/assets/stylesheets/myclicks.scss:7
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___4373911071844868349_69841202151740'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 19:10:32 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in="anonymous">": expected "{", was ""):
+    14:     <%= csrf_meta_tags %>
+    15:     <%= csp_meta_tag %>
+    16: 
+    17:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/assets/stylesheets/myclicks.scss:7
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___4373911071844868349_47318912230940'
+Started GET "/" for 127.0.0.1 at 2019-06-18 19:10:51 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in="anonymous">": expected "{", was ""):
+    14:     <%= csrf_meta_tags %>
+    15:     <%= csp_meta_tag %>
+    16: 
+    17:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/assets/stylesheets/myclicks.scss:7
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___4373911071844868349_69841325452240'
+Started GET "/" for 127.0.0.1 at 2019-06-18 19:11:09 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in="anonymous">": expected "{", was ""):
+    14:     <%= csrf_meta_tags %>
+    15:     <%= csp_meta_tag %>
+    16: 
+    17:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/assets/stylesheets/myclicks.scss:7
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___4373911071844868349_69841323049320'
+Started GET "/" for 127.0.0.1 at 2019-06-18 19:11:16 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in="anonymous">": expected "{", was ""):
+    14:     <%= csrf_meta_tags %>
+    15:     <%= csp_meta_tag %>
+    16: 
+    17:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/assets/stylesheets/myclicks.scss:7
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___4373911071844868349_69841137403420'
+Started GET "/" for 127.0.0.1 at 2019-06-18 19:12:01 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...in="anonymous">": expected "{", was ""):
+    14:     <%= csrf_meta_tags %>
+    15:     <%= csp_meta_tag %>
+    16: 
+    17:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/assets/stylesheets/myclicks.scss:7
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___4373911071844868349_69841319454700'
+Started GET "/" for 127.0.0.1 at 2019-06-18 19:13:25 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.1ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 19:13:31 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:18:20 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1bbx/XHXs6fuNI7N/APqlpLIhQ05Lpni8iY5Wi0LhEs1CXg4zNXSG651OEpmTTQ9k10Q3Lb1xEmhmCQHqncqhw==", "myclick"=>{"name"=>"hddfg", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a48aa4250 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-1kqu7b5.pdf>, @original_filename="sample_resume.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"sample_resume.pdf\"\r\nContent-Type: application/pdf\r\n">, "type"=>"resume"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'resume'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 19:21:11 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 19ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:21:31 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2QUwoi180AeCOu7qWHbai7Of8N5qoSjrc2DS3nOXsaLeSp/1XlrNwoUxBjdd5fcikdZHKHEzzE2YmKFSiHdm0g==", "myclick"=>{"name"=>"Resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a66ae2ff0 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-1y75i2z.pdf>, @original_filename="sample_resume.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"sample_resume.pdf\"\r\nContent-Type: application/pdf\r\n">, "type"=>"pdf"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'pdf'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:21:50 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2QUwoi180AeCOu7qWHbai7Of8N5qoSjrc2DS3nOXsaLeSp/1XlrNwoUxBjdd5fcikdZHKHEzzE2YmKFSiHdm0g==", "myclick"=>{"name"=>"Resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a653038d0 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-g0nlzd.pdf>, @original_filename="sample_resume.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"sample_resume.pdf\"\r\nContent-Type: application/pdf\r\n">, "type"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/myclicks_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/myclicks_controller.rb:16
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:22:21 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F9s0mh2fEPTvFejywSep7RbzRht9xRImge3xye39Nn/EMOFG1BhhtS3v37Ol7MOlhJ67nZl8O5x/8RL3FcjqQ==", "myclick"=>{"name"=>"Resume", "type"=>"pdf"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'pdf'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:23:05 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F9s0mh2fEPTvFejywSep7RbzRht9xRImge3xye39Nn/EMOFG1BhhtS3v37Ol7MOlhJ67nZl8O5x/8RL3FcjqQ==", "myclick"=>{"name"=>"Resume", "type"=>"name"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'name'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:23:25 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F9s0mh2fEPTvFejywSep7RbzRht9xRImge3xye39Nn/EMOFG1BhhtS3v37Ol7MOlhJ67nZl8O5x/8RL3FcjqQ==", "myclick"=>{"name"=>"Resume", "type"=>"text"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'text'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:24:29 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F9s0mh2fEPTvFejywSep7RbzRht9xRImge3xye39Nn/EMOFG1BhhtS3v37Ol7MOlhJ67nZl8O5x/8RL3FcjqQ==", "myclick"=>{"name"=>"Resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a5889a990 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-hqyhzx.pdf>, @original_filename="sample_resume.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"sample_resume.pdf\"\r\nContent-Type: application/pdf\r\n">, "type"=>"pdf"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'pdf'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-18 19:45:15 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F9s0mh2fEPTvFejywSep7RbzRht9xRImge3xye39Nn/EMOFG1BhhtS3v37Ol7MOlhJ67nZl8O5x/8RL3FcjqQ==", "myclick"=>{"name"=>"Resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007f0a5860fa18 @tempfile=#<Tempfile:/tmp/RackMultipart20190618-16088-1t48efd.pdf>, @original_filename="sample_resume.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"sample_resume.pdf\"\r\nContent-Type: application/pdf\r\n">, "type"=>"pdf"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'pdf'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started GET "/myclicks" for 127.0.0.1 at 2019-06-18 19:45:29 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.2ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-18 19:45:34 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-06-19 10:17:15 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/mallesh/.rvm/gems/ruby-2.2.5/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.3ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 163ms (Views: 153.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/myclicks/new" for 127.0.0.1 at 2019-06-19 10:17:25 +0530
+Processing by MyclicksController#new as HTML
+  Rendering myclicks/new.html.erb within layouts/application
+  Rendered myclicks/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 33ms (Views: 21.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/myclicks" for 127.0.0.1 at 2019-06-19 10:17:58 +0530
+Processing by MyclicksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C0KDrJAIhpu99wnh8CjrT0DshGu5goHYHfNWlTIQaq5Pyo/eP91s70KWSenTDtNI5tRsiRJ/cJhpzswXH81gfw==", "myclick"=>{"name"=>"My Resume", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fcb5eb001b8 @tempfile=#<Tempfile:/tmp/RackMultipart20190619-4108-13xxsko.pdf>, @original_filename="sample_resume.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"myclick[attachment]\"; filename=\"sample_resume.pdf\"\r\nContent-Type: application/pdf\r\n">, "type"=>"document"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'document'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Myclick.inheritance_column to use another column for that information.):
+  
+app/controllers/myclicks_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2019-06-19 10:51:41 +0530
+Processing by MyclicksController#index as HTML
+  Rendering myclicks/index.html.erb within layouts/application
+  [1m[36mMyclick Load (0.2ms)[0m  [1m[34mSELECT "myclicks".* FROM "myclicks"[0m
+  ↳ app/views/myclicks/index.html.erb:24
+  Rendered myclicks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+

@@ -1,0 +1,2 @@
+module MyclicksHelper
+end
