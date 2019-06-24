@@ -2,15 +2,16 @@
 <h1>Hello, My New File</h1>
 	<%= link_to 'new', new_myclick_path %>
 <hr>
-
 <% unless notice.nil? %>
-	<div class="alert alert-primary" role="alert">
-	  <%= notice %>
-	</div>
+ <div class="alert alert-primary" role="alert">
+  <%= notice %>
+ </div>
 
-  <div class="actions">
-  <%= form.submit %>
+ <div class="actions">
+   <%= form.submit %>
   </div>
+
+  
 <% end %>
 
 <%end%>
