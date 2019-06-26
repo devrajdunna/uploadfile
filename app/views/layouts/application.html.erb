@@ -6,9 +6,17 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+<style type="text/css">
+  .background {
+    background-image: url("assets/hut.jpg");
+    background-size: cover;
+  }
+</style>
+
 
 <!DOCTYPE html>
 <html>
+<div class='background'>
   <head>
     <title>File Uploading</title>
     <%= csrf_meta_tags %>
@@ -19,8 +27,31 @@
   </head>
 
   <body>
+
+
+
     <div class = "container" style = "padding-top:20px;">
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+     <% end %>
+
+<p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_mylog.email %></strong>.
+    <%= link_to 'Edit profile', edit_mylog_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_mylog_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign up", new_mylog_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_mylog_session_path, :class => 'navbar-link'  %>
+  <% end %>
+</p>
+  
+
     <%= yield %>
   </div>
-  </body>
+  </body></div>
 </html>

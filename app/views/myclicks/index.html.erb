@@ -1,20 +1,19 @@
-<% if !flash[:notice].blank? %>
-   <div class = "alert alert-info">
+ <%# <% if !flash[:notice].blank? %> 
+    <%#<div class = "alert alert-info">
       <%= flash[:notice] %>
-   </div>
-<% end %>
+    <%#--</div>
+ <%#--<% end %>
 
-<br />
+ 
 
-<%= link_to "New Click", new_myclick_path, class: "btn btn-primary" %>
+<%= link_to "Upload New File", new_myclick_path, class: "btn btn-primary" %>
 <br />
-<br />
-
+<div class ='background'>
 <table class = "table table-bordered table-striped">
    <thead>.
       <tr>
          <th>File Name</th>
-         <th>Doenload</th>
+         <th>Download</th>
          <th></th>
          
       </tr>
@@ -25,9 +24,8 @@
          <tr>
             <td><%= myclick.name %></td>
             <td><%= link_to "Download File", myclick.attachment_url %></td>
-            <td><%= button_to "Delete",  myclick, method: :delete, confirm: "Are you sure that you wish to delete #{myclick.name}?", class: "btn btn-danger"%></td>
+            <td><%= button_to "Delete",  myclick, method: :delete, data:{ confirm: "Are you sure that you wish to delete '#{myclick.name}'?"}, class: "btn btn-danger"%></td>
          </tr>
        <% end %>
    </tbody>
-   
-</table>
+   </table></div>
