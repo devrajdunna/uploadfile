@@ -6,11 +6,14 @@
 
  
 
-<%= link_to "Upload New File", new_myclick_path, class: "btn btn-primary" %>
+<p><%= link_to "Upload New File", new_myclick_path, class: "btn btn-primary" %> |
+    <%= link_to "Logout", destroy_mylog_session_path, method: :delete, :class => 'navbar-link'  %>
+  </p>
+
 <br />
 <div class ='background'>
-<table class = "table table-bordered table-striped">
-   <thead>.
+<table class = 'table'>
+   <thead>
       <tr>
          <th>File Name</th>
          <th>Download</th>
@@ -23,9 +26,9 @@
       <% @myclick.each do |myclick| %>
          <tr>
             <td><%= myclick.name %></td>
-            <td><%= link_to "Download File", myclick.attachment_url %></td>
+            <td><%= link_to "Download File", myclick.attachment_url,:class =>'btn btn-primary' %></td>
             <td><%= button_to "Delete",  myclick, method: :delete, data:{ confirm: "Are you sure that you wish to delete '#{myclick.name}'?"}, class: "btn btn-danger"%></td>
          </tr>
        <% end %>
    </tbody>
-   </table></div>
+    </table></div>
